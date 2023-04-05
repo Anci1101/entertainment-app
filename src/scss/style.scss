@@ -42,6 +42,32 @@ $semi-dark-blue: #161D2F;
 
 $mobile: 375px;
 $tablet: 750px;
-$desktop: 1440px;
+$desktop: 1100px;
+
+@mixin respond($breakpoint){
+    @if($breakpoint == large){
+        @media (min-width: $desktop) {
+            @content
+        }
+    };
+
+    @if ($breakpoint == medium){
+        @media (min-width: $tablet) {
+            @content
+        }
+    };
+    
+    @if ($breakpoint == small){
+        @media (min-width: $mobile) {
+            @content
+        };
+    }
+}
+
+
+.app {
+    background-color: $dark-blue;
+    height: 100vh;
+}
 
 
