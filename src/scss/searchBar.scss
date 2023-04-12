@@ -1,0 +1,57 @@
+@import './style.scss';
+
+.searchBarContainer {
+    grid-area: search;
+    padding: 20px;
+
+    @include respond(medium){
+        padding: 10px 25px;
+    }
+
+    @include respond(large){
+        padding: 0;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.searchBar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    height: 24px;
+
+    @include respond(medium){
+        height: 32px;
+    }
+}
+
+.SearchBarIcon {
+    // width: 40px;
+    // height: 100%;
+}
+
+
+.searchBarInput {
+    background-color: $dark-blue;
+    border: none;
+    color: $white;
+    padding: 5px;
+    font-weight: weight(light);
+    font-size: 16px;
+
+    @include respond(medium){
+        font-size: $font-heading-medium-small;;
+    }
+}
+
+.searchBarInput:focus {
+    outline: none;
+    border-bottom: 1px solid $greyish-blue;
+}
+
+.searchBarInput:active {
+    background-color: $dark-blue;
+    border-bottom: 1px solid $greyish-blue;
+    border: none;
+}

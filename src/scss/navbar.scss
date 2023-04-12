@@ -1,10 +1,13 @@
 @import './style.scss';
 
 .navBarContainer {
+    grid-area: nav;
+    width: 100%;
     
     
     @include respond(medium){
         justify-self: center;
+        width: 100%;
         padding: 25px;
     }
 

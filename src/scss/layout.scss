@@ -1,0 +1,28 @@
+@import './style.scss';
+
+.layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "nav nav"
+                         "search search"
+                         "main main";
+
+    @include respond(large){
+    grid-template-columns: 150px auto;
+    grid-template-areas: "nav search"
+                         "nav main";
+    grid-template-rows: 120px calc(100vh - 120px);
+    }
+    
+}
+
+.main {
+    grid-area: main;
+    padding: 20px;
+    @include respond(medium){
+        padding: 25px;
+    }
+    @include respond(large){
+        padding: none;
+    }
+}
