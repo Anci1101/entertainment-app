@@ -1,0 +1,22 @@
+@import './style.scss';
+
+.title {
+    color: $white;
+    font-size: $font-heading-extra-small;
+    font-weight: weight(light);
+}
+
+.movieListWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+
+    @include respond(medium){
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @include respond(large){
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+

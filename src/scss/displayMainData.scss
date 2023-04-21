@@ -1,0 +1,68 @@
+@import './style.scss';
+
+.singleMediaWrapper {
+    min-width: 164px;
+    min-height: 154px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include respond(medium){
+        min-width: 220px;
+        min-height: 192px;
+    }
+
+    @include respond(large){
+        min-width: 280px;
+        min-height: 226px;
+    }
+}
+
+.mediaImg {
+    height: 110px;
+    @include respond(medium){
+        height: 140px;
+    }
+    @include respond(large){
+        height: 174px;
+    }
+}
+
+.mediaImg > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.mediaInfo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: weight(light);
+    color: $white;
+    font-size: $font-body-small;
+    opacity: 75%;
+}
+
+.dot {
+    height: 3px;
+    width: 3px;
+    background-color: $white;
+    border-radius: 50%;
+}
+
+.category {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.mediaIcon {
+    filter: invert(99%) sepia(0%) saturate(101%) hue-rotate(195deg) brightness(117%) contrast(100%);
+    
+}
+
+.mediaTitle {
+    color: $white;
+    font-size: $font-body-medium;
+    font-weight: weight(medium);
+}
