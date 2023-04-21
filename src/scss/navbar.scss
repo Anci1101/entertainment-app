@@ -67,7 +67,7 @@
     }
 }
 
-.homeIcon:active, .moviesIcon:active, .tvSeriesIcon:active, .bookmarkIcon:active{
+.homeIcon:active, .moviesIcon:active, .tvSeriesIcon:active, .bookmarkMenuIcon:active{
     filter: invert(99%) sepia(0%) saturate(101%) hue-rotate(195deg) brightness(117%) contrast(100%);
 }
 
@@ -85,9 +85,9 @@
 
 // }
 
-// .bookmarked {
-
-// }
+.bookmarkMenuIcon {
+    stroke: none;
+}
 
 .avatarIcon {
     width: 24px;

@@ -24,7 +24,7 @@ const NavBar = () => {
                     <TvSeriesIcon className='tvSeriesIcon'/>
                 </Link>
                 <Link to='/bookmarked'>
-                    <BookmarkIcons className='bookmarkIcon'/>
+                    <BookmarkIcons className='bookmarkMenuIcon'/>
                 </Link>
             </div>
             <div className='avatarIcon'>

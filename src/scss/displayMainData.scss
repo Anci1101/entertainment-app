@@ -25,12 +25,51 @@
     @include respond(large){
         height: 174px;
     }
+    position: relative;
 }
 
 .mediaImg > img {
     width: 100%;
     height: 100%;
-    border-radius: 10px;
+    border-radius: 8px;
+}
+
+.bookmark {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 32px;
+    width: 32px;
+    background-color: rgba(151, 151, 151, 0.6);
+    border-radius: 50%;
+    margin-top: 10px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.bookmark:hover{
+    background-color: $white;
+}
+
+.bookmark:hover .bookmarkIcon {
+    stroke: $dark-blue;
+}
+
+.bookmark:active{
+    background-color: rgba(151, 151, 151, 0.6);
+}
+
+.bookmark:active .bookmarkIcon {
+    fill: $white;
+    stroke: none;
+}
+
+.bookmarkIcon {
+    fill: none;
+    stroke: $white;
 }
 
 .mediaInfo {
