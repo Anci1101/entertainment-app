@@ -5,10 +5,13 @@ import TvSeries from './pages/TvSeries.js'
 import Bookmarked from './pages/Bookmarked.js'
 import './scss/scss-style.js'
 import Layout from './pages/Layout.js';
-function App() {
+import { QueryClient, QueryClientProvider} from '@tanstack/react-query';
 
+function App() {
+  const client = new QueryClient()
   return (
     <div className="app">
+      <QueryClientProvider client={client}>
       <Router>
         <Layout>
           <Routes>
@@ -20,6 +23,7 @@ function App() {
           </Routes>
         </Layout>
       </Router>
+      </QueryClientProvider>
     </div>
   );
 }
