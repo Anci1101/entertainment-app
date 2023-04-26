@@ -1,8 +1,13 @@
 import React from 'react'
+import RecomendedMedia from '../components/RecomendedMedia'
+import Trending from '../components/Trending'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      <Trending/>
+      <RecomendedMedia/>
+    </div>
   )
 }
 

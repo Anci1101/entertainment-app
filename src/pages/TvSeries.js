@@ -11,7 +11,7 @@ const TvSeries = () => {
   const tvSeries = data?.filter((tvSerie)=>tvSerie.category === "TV Series")
   return (
     <div className='tvSerieContainer'>
-      <div className='title'>Movies</div>
+      <div className='mediaMainTitle'>Tv Series</div>
       <div className='tvSerieListWrapper'>
         {tvSeries?.map((movie)=> (
           <DisplayMainData key={movie.title}

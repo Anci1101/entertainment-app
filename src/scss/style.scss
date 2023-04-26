@@ -70,4 +70,15 @@ $desktop: 1100px;
     height: 100%;
 }
 
+.mediaMainTitle {
+    color: $white;
+    font-weight: weight(light);
+    font-size: $font-heading-medium-small;
+    margin: 20px 0 20px 0;
+
+    @include respond(medium){
+        font-size: $font-heading-large;
+    }
+}
+
 
