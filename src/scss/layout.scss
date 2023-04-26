@@ -8,7 +8,7 @@
                          "main main";
 
     @include respond(large){
-    grid-template-columns: 150px auto;
+    grid-template-columns: 150px minmax(0, 1fr);
     grid-template-areas: "nav search"
                          "nav main";
     grid-template-rows: 120px;
@@ -20,7 +20,7 @@
     grid-area: main;
     padding: 20px;
     @include respond(medium){
-        padding: 25px;
+        padding: 0 25px 25px 25px;
     }
     @include respond(large){
         padding: none;
