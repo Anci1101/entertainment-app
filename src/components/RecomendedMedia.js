@@ -1,18 +1,17 @@
-import { useQuery } from '@tanstack/react-query'
 import React from 'react'
 import DisplayMainData from '../components/DisplayMainData'
-const RecomendedMedia = () => {
-  const {data} = useQuery(["recomendedMedia"], () => {
-    return fetch('http://localhost:8000/data')
-    .then((response) => response.json())
-  })
-  
+
+const RecomendedMedia = ({filteredMedia, searchedWord, numberOfFilteredMedia}) => {
   return (
     <div>
-      <h4 className='mediaMainTitle'>Recomended for you</h4>  
+      {searchedWord === '' ? 
+      (<div className='mediaMainTitle'>Recomended for you</div> ) : 
+      (<div className='mediaMainTitle'>Found {numberOfFilteredMedia} results for '{searchedWord}'</div> )}
+      
       <div className='recomendedMediaWrapper'>
-        {data?.map((media)=>(
+        {filteredMedia?.map((media)=>(
           <DisplayMainData
+          key={media.id}
           title={media.title}
           year={media.year}
           category={media.category}

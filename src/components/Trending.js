@@ -1,14 +1,11 @@
-import { useQuery } from '@tanstack/react-query'
 import React from 'react'
 import {ReactComponent as MoviesIcon} from '../assets/icon-nav-movies.svg'
 import {ReactComponent as TvSeriesIcon} from '../assets/icon-nav-tv-series.svg'
 import {ReactComponent as EmptyBookmark} from '../assets/icon-bookmark-empty.svg'
+import { useData } from '../App'
 
 const Trending = () => {
-  const {data} = useQuery(["tending"], () => {
-    return fetch('http://localhost:8000/data')
-    .then((response) => response.json())
-  })
+  const { data } = useData()
 
   const trendingMedia = data?.filter((singleMedia)=>singleMedia.isTrending === true)
   
@@ -19,7 +16,7 @@ const Trending = () => {
       <div className='trendingMediaContainer'>
           
           {trendingMedia?.map((singleTrendingMedia)=>(
-            <div className='trendingSingleMediaWrapper'>
+            <div className='trendingSingleMediaWrapper' key={singleTrendingMedia.id}>
               <div className='trendingMediaImg'>
                 <img src={singleTrendingMedia.thumbnail.regular.medium} alt="" />
                 <div className='bookmark'>
