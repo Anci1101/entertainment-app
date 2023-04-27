@@ -1,11 +1,8 @@
-import { useQuery } from '@tanstack/react-query'
 import React from 'react'
+import { useData } from '../App'
 import DisplayMainData from '../components/DisplayMainData'
 const RecomendedMedia = () => {
-  const {data} = useQuery(["recomendedMedia"], () => {
-    return fetch('http://localhost:8000/data')
-    .then((response) => response.json())
-  })
+  const { data } = useData()
   
   return (
     <div>

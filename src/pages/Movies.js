@@ -1,13 +1,10 @@
 import React from 'react'
-import { useQuery } from '@tanstack/react-query'
 import '../scss/scss-style'
 import DisplayMainData from '../components/DisplayMainData'
+import { useData } from '../App'
 
 const Movies = () => {
-  const {data} = useQuery(["movie"], () => {
-    return fetch('http://localhost:8000/data')
-    .then((response) => response.json())
-  })
+  const { data } = useData()
   const movies = data?.filter((movie)=>movie.category === "Movie")
   return (
     <div className='movieContainer'>

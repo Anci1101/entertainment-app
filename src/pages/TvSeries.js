@@ -1,13 +1,10 @@
-import { useQuery } from '@tanstack/react-query'
 import React from 'react'
+import { useData } from '../App'
 import DisplayMainData from '../components/DisplayMainData'
 import '../scss/scss-style'
 
 const TvSeries = () => {
-  const {data} = useQuery(["tvSeries"], () => {
-    return fetch('http://localhost:8000/data')
-    .then((response)=> response.json())
-  })
+  const { data } = useData()
   const tvSeries = data?.filter((tvSerie)=>tvSerie.category === "TV Series")
   return (
     <div className='tvSerieContainer'>

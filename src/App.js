@@ -5,7 +5,12 @@ import TvSeries from './pages/TvSeries.js'
 import Bookmarked from './pages/Bookmarked.js'
 import './scss/scss-style.js'
 import Layout from './pages/Layout.js';
-import { QueryClient, QueryClientProvider} from '@tanstack/react-query';
+import { QueryClient, QueryClientProvider, useQuery} from '@tanstack/react-query';
+
+export const useData = () => useQuery(["data"], () => {
+  return fetch('http://localhost:8000/data')
+  .then((response) => response.json())
+})
 
 function App() {
   const client = new QueryClient()
