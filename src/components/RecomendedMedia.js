@@ -1,15 +1,17 @@
 import React from 'react'
-import { useData } from '../App'
 import DisplayMainData from '../components/DisplayMainData'
-const RecomendedMedia = () => {
-  const { data } = useData()
-  
+
+const RecomendedMedia = ({filteredMedia, searchedWord, numberOfFilteredMedia}) => {
   return (
     <div>
-      <h4 className='mediaMainTitle'>Recomended for you</h4>  
+      {searchedWord === '' ? 
+      (<div className='mediaMainTitle'>Recomended for you</div> ) : 
+      (<div className='mediaMainTitle'>Found {numberOfFilteredMedia} results for '{searchedWord}'</div> )}
+      
       <div className='recomendedMediaWrapper'>
-        {data?.map((media)=>(
+        {filteredMedia?.map((media)=>(
           <DisplayMainData
+          key={media.id}
           title={media.title}
           year={media.year}
           category={media.category}

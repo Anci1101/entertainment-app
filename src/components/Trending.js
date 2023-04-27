@@ -16,7 +16,7 @@ const Trending = () => {
       <div className='trendingMediaContainer'>
           
           {trendingMedia?.map((singleTrendingMedia)=>(
-            <div className='trendingSingleMediaWrapper'>
+            <div className='trendingSingleMediaWrapper' key={singleTrendingMedia.id}>
               <div className='trendingMediaImg'>
                 <img src={singleTrendingMedia.thumbnail.regular.medium} alt="" />
                 <div className='bookmark'>
